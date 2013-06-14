@@ -9,3 +9,5 @@ TitaniumのFlat UIサンプルアプリケーションです。
 動作は保証しません。
 
 Titanium SDK3.1で動作を確認しています。
+詳しくはこちらもご覧ください。
+http://uchidak.net/ti-flat-ui-sample
