@@ -7,12 +7,15 @@ function ApplicationTabGroup() {
 
     var Tab1Window = require('ui/handheld/Tab1Window');
     var Tab2Window = require('ui/handheld/Tab2Window');
+    var Tab3Window = require('ui/handheld/Tab3Window');
+    var Tab4Window = require('ui/handheld/Tab4Window');
+    var Tab5Window = require('ui/handheld/Tab5Window');
 
     var win1 = new Tab1Window(L('tab1'));
     var win2 = new Tab2Window(L('tab2'));
-    var win3 = new Tab1Window(L('tab3'));
-    var win4 = new Tab2Window(L('tab4'));
-    var win5 = new Tab1Window(L('tab5'));
+    var win3 = new Tab3Window(L('tab3'));
+    var win4 = new Tab4Window(L('tab4'));
+    var win5 = new Tab5Window(L('tab5'));
 
     var tab1 = Ti.UI.createTab({
         activeIcon : 'images/tab1ica.png',

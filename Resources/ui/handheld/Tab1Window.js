@@ -8,26 +8,28 @@ function Tab1Window(title) {
 
     var win = Ti.UI.createWindow();
     win.titleControl = windowTitle;
+    win.layout = 'vertical';
     styleJS.setWindowStyle(win);
 
     var editButton = Ti.UI.createButton();
-    editButton.width = 44;
-    editButton.height = 44;
-    editButton.backgroundImage = 'images/edit-button.png';
+    styleJS.setTab1WindowEditButtonStyle(editButton);
     win.rightNavButton = editButton;
     editButton.addEventListener('click', function(e) {
         alert('edit button click');
     });
 
     var backbutton = Titanium.UI.createButton();
-    backbutton.backgroundImage = '/images/back-button.png';
-    backbutton.width = 44;
-    backbutton.height = 44;
+    styleJS.setTab1WindowBackButtonStyle(backbutton);
     backbutton.addEventListener('click', function(e) {
         alert('back button click');
     });
     win.leftNavButton = backbutton;
 
+    var movieView = Titanium.Media.createVideoPlayer();
+    styleJS.setTab1WindowMovieViewStyle(movieView);
+    movieView.url = '/media/infomovie.mp4';
+    win.add(movieView);
+    
     var tableView = Ti.UI.createTableView();
     styleJS.setTab1WindowTableViewStyle(tableView);
     win.add(tableView);
@@ -54,17 +56,17 @@ function Tab1Window(title) {
 
     var dataB = [];
     dataB.push({
-        title : 'バージョン：' + Ti.App.iOSAPPVERSION,
+        title : 'Version：' + Ti.App.iOSAPPVERSION,
         url : '',
         icon : 'images/more4ic.png'
     });
     dataB.push({
-        title : 'このアプリを評価する',
+        title : 'Rate this App',
         url : 'http://uchidak.net',
         icon : 'images/more5ic.png'
     });
     dataB.push({
-        title : 'その他のアプリを見る',
+        title : 'Other Apps',
         url : 'https://uchidak.net',
         icon : 'images/more6ic.png'
     });
@@ -74,7 +76,7 @@ function Tab1Window(title) {
         icon : 'images/more7ic.png'
     });
     dataB.push({
-        title : 'お問い合わせ',
+        title : 'Contact',
         url : 'http://uchidak.net',
         icon : 'images/more8ic.png'
     });

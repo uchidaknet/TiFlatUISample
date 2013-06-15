@@ -37,6 +37,18 @@ exports.setTab1WindowTableViewStyle = function(tableView) {
     tableView.style = Titanium.UI.iPhone.TableViewStyle.GROUPED;
     tableView.separatorColor = '#ecf0f1';
 };
+exports.setTab1WindowMovieViewStyle = function(e) {
+    e.autoplay = true;
+    e.opacity = 0.62;
+    e.repeatMode = Ti.Media.VIDEO_REPEAT_MODE_ONE;
+    e.mediaControlStyle = Titanium.Media.VIDEO_CONTROL_HIDDEN;
+    e.scalingMode = Titanium.Media.VIDEO_SCALING_ASPECT_FIT;
+    e.top = -1;
+    e.height = 150;
+    e.width = 320;
+    e.backgroundColor = '#f8f8f8';
+};
+
 exports.setTab1WindowRowStyle = function(row) {
     row.color = '#333';
     row.height = 42;
@@ -62,6 +74,16 @@ exports.setTab1WindowRowIconViewStyle = function(v) {
     v.left = 10;
     v.width = 30;
     v.height = '100%';
+};
+exports.setTab1WindowEditButtonStyle = function(v) {
+    v.width = 44;
+    v.height = 44;
+    v.backgroundImage = 'images/edit-button.png';
+};
+exports.setTab1WindowBackButtonStyle = function(v) {
+    v.width = 44;
+    v.height = 44;
+    v.backgroundImage = 'images/back-button.png';
 };
 
 //--------------
@@ -127,4 +149,89 @@ exports.setTab2TableViewRowStyle = function(e, flg) {
     } else {
         e.backgroundColor = '#ecf0f1';
     }
+};
+
+//--------------
+//Tab3 Window
+//--------------
+exports.setTab3SeparaterLineStyle = function(e) {
+    e.backgroundColor = '#1abc9c';
+    e.height = 1;
+    e.width = Ti.UI.FILL;
+};
+
+exports.setTab3LineViewStyle = function(e) {
+    e.layout = 'horizontal';
+    e.height = 88;
+    e.width = Ti.UI.FILL;
+    e.backgroundColor = '#1abc9c';
+};
+
+var setTab3MenuAreaStyle = function(e) {
+    e.width = 106;
+    e.height = 88;
+};
+
+exports.setTab3HeaderMenuAreaStyle = function(e) {
+    setTab3MenuAreaStyle(e);
+    e.backgroundColor = keyColor;
+    e.addEventListener('touchstart', function() {
+        e.backgroundColor = '#f8f8f8';
+    });
+    e.addEventListener('touchend', function() {
+        e.backgroundColor = keyColor;
+    });
+    e.addEventListener('touchcancel', function() {
+        e.backgroundColor = keyColor;
+    });
+};
+
+exports.setTab3MainMenuAreaStyle = function(e) {
+    setTab3MenuAreaStyle(e);
+    e.backgroundColor = '#f8f8f8';
+    e.addEventListener('touchstart', function() {
+        e.backgroundColor = keyColor;
+    });
+    e.addEventListener('touchend', function() {
+        e.backgroundColor = '#f8f8f8';
+    });
+    e.addEventListener('touchcancel', function() {
+        e.backgroundColor = '#f8f8f8';
+    });
+};
+
+var setTab3MenuLabelStyle = function(e) {
+    e.width = Ti.UI.FILL;
+    e.height = Ti.UI.FILL;
+    e.textAlign = Ti.UI.TEXT_ALIGNMENT_CENTER;
+    e.font = {
+        fontSize : 16,
+        fontFamily : 'Rounded M+ 1p'
+    };
+};
+exports.setTab3HeaderMenuLabelStyle = function(e) {
+    setTab3MenuLabelStyle(e);
+    e.color = '#f8f8f8';
+    e.addEventListener('touchstart', function() {
+        e.color = keyColor;
+    });
+    e.addEventListener('touchend', function() {
+        e.color = '#f8f8f8';
+    });
+    e.addEventListener('touchcancel', function() {
+        e.color = '#f8f8f8';
+    });
+};
+exports.setTab3MainMenuLabelStyle = function(e) {
+    setTab3MenuLabelStyle(e);
+    e.color = keyColor;
+    e.addEventListener('touchstart', function() {
+        e.color = '#f8f8f8';
+    });
+    e.addEventListener('touchend', function() {
+        e.color = keyColor;
+    });
+    e.addEventListener('touchcancel', function() {
+        e.color = keyColor;
+    });
 };

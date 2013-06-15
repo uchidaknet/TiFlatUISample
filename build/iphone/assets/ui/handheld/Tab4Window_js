@@ -1,0 +1,1 @@
+function Tab4Window(e){var t;t=require("ui/handheld/Style4iOS");var a=Ti.UI.createLabel();a.text=e,t.setWindowTitleLabelStyle(a);var i=Ti.UI.createWindow();return i.titleControl=a,i.layout="vertical",t.setWindowStyle(i),i}module.exports=Tab4Window;
